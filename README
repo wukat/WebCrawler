@@ -1,0 +1,52 @@
+Author: Wojciech Kasperek / wukat.
+
+Application is based on two others subapplications: crawler and searchApp. Crawler's aim is to collect sites from agh.edu.pl domain (starting from "http://www.agh.edu.pl") and save them in elasticsearch engine. Not all sites from domain must be found. SearchApp is used to search pages in data collected in engine.
+
+Both applications are built using OTP. Attached folders contain README files, which describe how to use applications, sources and rebar with configuration file.
+
+Notes about crawler:
+- the architecture ensures 1 second gap between requests to server (with assumption that on each server is only one domain), because new process is being created for every domain;
+- "robots.txt" haven't been considered, because of lack of them on university sites, but it is possible to add this quickly.
+
+Project does not contain elasticsearch. Version 1.4.2 was used.
+
+Basic commands:
+curl -XDELETE 'localhost:9200/agh.edu.pl -- removes index with data collected by crawler
+curl 'localhost:9200/_cat/indices?v' -- shows indexes data (useful for checking number of collected sites)
+
+
+Project uses external libraries:
+- erlastic_search (https://github.com/tsloughter/erlastic_search) (communication API),
+- mochiweb (https://github.com/mochi/mochiweb).
+
+
+Autor: Wojciech Kasperek / wukat
+
+
+Aplikacja składa się z dwóch podaplikacji: crawlera i searchApp. Crawler ma za zadanie zebrać strony w domenie agh.edu.pl (zaczynając od "http://www.agh.edu.pl") i zapisać je w silniku elasticsearch. Nie muszą zostać odnalezione wszystkie strony w domenie. SearchApp służy do wyszukiwania w danych zebranych w silniku.
+
+Obie aplikacje są zbudowane w OTP. W załączonych folderach znajdują się pliki README opisujące sposób uruchomienia aplikacji, źródła oraz rebar z plikiem konfiguracyjnym.
+
+Uwagi na temat crawlera:
+- architektura zapewnia sekundowy odstęp pomiędzy zapytaniami do tego samego serwera (zakładając, że na jednym serwerze nie ma więcej niż jedna domena), ponieważ dla każdej domeny tworzony jest nowy proces;
+- nie zostały uwzględnione pliki "robots.txt" ze względu na ich brak na podstawowych domenach uczelni, jednak jest możliwość szybkiego dodania tej funkcji.
+
+
+Do projektu nie został dołączony elasticsearch. Używana wersja to 1.4.2. 
+
+Podstawowe komendy:
+curl -XDELETE 'localhost:9200/agh.edu.pl -- usunięcie indeksu, pod którym crawler zapisuje dane
+curl 'localhost:9200/_cat/indices?v' -- wyświetlenie danych o indeksach (można sprawdzić liczbę zapisanych stron)
+
+W projekcie użyto zewnętrznych bibliotek:
+- erlastic_search (https://github.com/tsloughter/erlastic_search) (API do komunikacji z elasticsearchem),
+- mochiweb (https://github.com/mochi/mochiweb).
+
+
+
+
+
+
+
+
+
