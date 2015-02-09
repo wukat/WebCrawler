@@ -1,0 +1,16 @@
+{application, crawlerApplication, [
+  {description, "Web crawler with elasticsearch"},
+  {vsn, "1"},
+  {mod, {crawlerApplication, ["agh.edu.pl", "http://www.agh.edu.pl"]}},
+  {modules, [topCrawlerSupervisor, domainServer, crawlerAgent, crawlerApplication]},
+  {registered, [topSupervisor]},
+  {applications, [
+    kernel,
+    stdlib,
+    ssl,
+    inets,
+    erlastic_search,
+    mochiweb
+  ]},
+  {env, []}
+]}.

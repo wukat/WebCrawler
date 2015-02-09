@@ -1,0 +1,12 @@
+{application, searchApplication, [
+  {description, "Search api"},
+  {vsn, "1"},
+  {registered, [searchSupervisor]},
+  {applications, [
+    kernel,
+    stdlib,
+    erlastic_search
+  ]},
+  {mod, {searchApplication, []}},
+  {env, []}
+]}.

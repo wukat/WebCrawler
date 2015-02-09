@@ -1,0 +1,54 @@
+Author: Wojciech Kasperek / wukat.
+
+Used libraries:
+- erlastic_search (https://github.com/tsloughter/erlastic_search),
+- mochiweb (https://github.com/mochi/mochiweb).
+
+Application is used to "crawl" through the net in given domain to collect pages and save  them in elasticsearch.
+
+Before running application, run elasticsearch (http://www.elasticsearch.org/).
+
+To run (with default configuration):
+make run
+To run with own configuratio you have to change mod value in crawlerApplication.app.src and run:
+make run.
+To kill from erlang console, type in:
+"application:stop(crawlerApplication).".
+
+Default configuration is:
+domain agh.edu.pl
+start link: http://www.agh.edu.pl/
+
+Erlang version: R15B01.
+
+Note:
+logs in console are OK, we don't care about bugs on the lowest level of application.
+
+
+Polish version/Wersja polska:
+Autor: Wojciech Kasperek / wukat
+
+Wykorzystane biblioteki:
+- erlastic_search (https://github.com/tsloughter/erlastic_search),
+- mochiweb (https://github.com/mochi/mochiweb).
+
+Aplikacja służy do "pełzania" przez sieć w danej domenie, aby zebrać strony i zapisać je w elasticsearchu.
+
+Przed uruchomieniem aplikacji, uruchom elasticsearch (http://www.elasticsearch.org/).
+
+Aby uruchomić (z domyślną konfiguracją):
+make run
+Aby uruchomić z własną konfiguracją należy zmienić wartośc mod w pliku crawlerApplication.app.src i uruchomić:
+make run.
+Aby zakończyć z konsoli erlang, wpisz:
+"application:stop(crawlerApplication).".
+
+
+Domyślna konfiguracja to:
+domena agh.edu.pl
+link początkowy: http://www.agh.edu.pl/
+
+Wersja erlanga: R15B01.
+
+Uwaga:
+logi w konsoli są w porządku, nie przejmujemy się błędami na najniższym poziomie aplikacji. 

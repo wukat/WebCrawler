@@ -1,0 +1,35 @@
+Author: Wojciech Kasperek / wukat.
+
+Used libraries:
+- erlastic_search (https://github.com/tsloughter/erlastic_search).
+
+Application is used to search pages in elasticsearch on basis of given words.
+
+Before running application, run elasticsearch (http://www.elasticsearch.org/).
+To run:
+make run
+To search (erlang console):
+searchServer:search_by_title(Value) - uses elasticsearch for looking for the pages with given words in title;
+searchServer:search_in_text(Value) - uses elasticsearch for looking for the pages with given words in text.
+
+In both cases Value should be a string, like "Kandydaci do", "Candidates", "Main topic".
+Erlang version: R15B01.
+
+
+Polish version/Wersja polska:
+Autor: Wojciech Kasperek / wukat
+
+Wykorzystane biblioteki:
+- erlastic_search (https://github.com/tsloughter/erlastic_search).
+
+Aplikacja służy do wyszukiwania stron w elasticsearch na podstawie podanych słów.
+
+Przed uruchomieniem aplikacji, uruchom elasticsearch (http://www.elasticsearch.org/).
+Aby uruchomić:
+make run
+Aby wyszukiwać:
+searchServer:search_by_title(Value) - używa elasticsearch do wyszukiwania stron z podanymi słowami w tytule;
+searchServer:search_in_text(Value) - używa elasticsearch do wyszukiwania stron z podanymi słowami w tekście.
+
+W obu przypadkach Value powinna być napisem, na przykład "Kandydaci do", "Candidates", "Main topic".
+Wersja erlanga: R15B01.
